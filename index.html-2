@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shun | Profile</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Thay link ảnh ImgBB của bạn vào đây, thêm màu nền tối dự phòng */
+            background: url('file:///C:/Users/Bao%20Duy/OneDrive/%E1%BA%A2nh/Screenshots/hic19.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #0f172a;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .profile-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Đồng hồ thời gian thực */
+        .live-clock {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #38bdf8;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Avatar */
+        .avatar-container {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .avatar-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .bio {
+            font-size: 14px;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Danh sách các nút liên kết tương tác */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn-link:hover {
+            background: #38bdf8;
+            color: #0f172a;
+            border-color: #38bdf8;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+        }
+
+        /* Footer nhỏ */
+        .footer-note {
+            margin-top: 25px;
+            font-size: 12px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-card">
+        <!-- Đồng hồ chạy thời gian thực -->
+        <div class="live-clock" id="clock">Đang tải thời gian...</div>
+
+        <!-- Ảnh đại diện nhỏ trong card -->
+        <div class="avatar-container">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300" alt="Avatar">
+        </div>
+
+        <h1>Shun</h1>
+        <p class="bio">Developer & Creator. ＼(((￣(￣(￣▽￣)￣)￣)))／!</p>
+
+        <!-- Các nút bấm tương tác (Bạn có thể thay đổi link và tên tùy ý) -->
+        <div class="links-container">
+            <a href="https://ranoku.com/novel/6a491c7f1622bb58403a3430"> vào đọc nhe</a>
+
+        </div>
+
+        <div class="footer-note">© 2026 Designed by Shun</div>
+    </div>
+
+    <script>
+        // Hàm cập nhật đồng hồ trực tiếp
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').innerText = `🕒 ${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
