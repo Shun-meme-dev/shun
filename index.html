@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chill</title>
     <style>
-        body {
+       body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* Hiệu ứng nền tự động chuyển màu */
-            background: linear-gradient(135deg, #1e3c72, #2a5298, #ff7675, #6c5ce7);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            /* Đổi nền thành ảnh */
+            background: url('https://i.pinimg.com/736x/da/ec/18/daec18b55af9f0e7c467bf3fe4dcb2ff.jpg') no-repeat center center fixed;
+            background-size: cover; /* Giúp ảnh phủ kín màn hình không bị méo */
             color: #fff;
             text-align: center;
             padding: 50px 20px;
@@ -20,7 +19,6 @@
             justify-content: center;
             align-items: center;
         }
-
         /* Định nghĩa animation chuyển màu nền */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -91,7 +89,7 @@
     <script>
         // Hàm chạy khi người dùng bấm nút
         function thongBao() {
-            alert("Nothing 😂🔥");
+            alert("Máy của chúng m đã bị hack ( •̀ ω •́ )✧");
         }
     </script>
 
