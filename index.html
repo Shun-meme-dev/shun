@@ -9,7 +9,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             /* Đổi nền thành ảnh */
             background: url('https://i.pinimg.com/736x/da/ec/18/daec18b55af9f0e7c467bf3fe4dcb2ff.jpg') no-repeat center center fixed;
-            background-size: cover; /* Giúp ảnh phủ kín màn hình không bị méo */
+            background-size: contain; /* Giúp ảnh hiển thị đầy đủ, không bị cắt xén */
+            background-color: #111; /* Thêm màu nền phụ xung quanh nếu ảnh không vừa khung màn hình */
             color: #fff;
             text-align: center;
             padding: 50px 20px;
@@ -76,14 +77,14 @@
 <body>
 
     <div class="card">
-        <h1>Chào mấy con zợ, Shun nè ( Duy Hoàng )! 👋</h1>
+        <h1>Chào mấy con zợ, Shun nè ( Duy Hoàng )! ƪ(˘⌣˘)ʃ</h1>
         
         <div class="message-box">
-            Zô đây thì bấm nút bên dưới đi! 😎
+            Giỏi thì bấm nút bên dưới đi! ( •̀ ω •́ )y
         </div>
 
         <!-- Nút bấm tương tác -->
-        <button class="btn" onclick="thongBao()">Bấm vào đây đi</button>
+        <button class="btn" onclick="thongBao()">Bấm đi</button>
     </div>
 
     <script>
