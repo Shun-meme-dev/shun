@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm Nang An Toàn Không Gian Mạng</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --primary-color: #1e3d59;
+            --accent-color: #17b978;
+            --text-color: #333333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.2rem;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--card-bg);
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--primary-color);
+        }
+
+        /* Nút tương tác */
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            display: inline-block;
+            margin: 8px 5px 8px 0;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+        }
+
+        /* Khung nội dung ẩn/hiện */
+        .toggle-content {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f1f5f8;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* Meme container */
+        .meme-box {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .meme-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            max-height: 300px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a.external-link {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cẩm Nang An Toàn Không Gian Mạng</h1>
+        <p>Bảo vệ chính bạn trước những cạm bẫy tinh vi trên không gian số</p>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>1. Tại sao An toàn Không gian Mạng lại quan trọng?</h2>
+            <p>Không gian mạng mang lại vô vàn tiện ích nhưng cũng tiềm ẩn nhiều rủi ro khôn lường từ hacker, lừa đảo trực tuyến và mã độc tống tiền (Ransomware). Chỉ một cú click sai chỗ có thể khiến bạn mất sạch dữ liệu hoặc tài khoản ngân hàng.</p>
+            
+            <div class="meme-box">
+                <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiOkM/giphy.gif" alt="Hacker typing meme">
+            </div>
+
+            <button class="btn" onclick="toggleSection('overview-extra')">Xem thêm thực trạng hiện nay</button>
+            <div id="overview-extra" class="toggle-content">
+                <p><strong>Thực tế đáng báo động:</strong> Mỗi ngày có hàng triệu cuộc tấn công mạng diễn ra trên toàn cầu. Các hình thức lừa đảo qua mạng xã hội (Facebook, Telegram) và tin nhắn giả mạo ngân hàng (SMS Brandname giả) đang ngày càng tinh vi hơn bao giờ hết.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Nghệ thuật Quản lý Mật khẩu & Xác thực</h2>
+            <p>Mật khẩu yếu như <code>123456</code> hay <code>nguyenvanA1995</code> chính là "mở cửa đón trộm" vào nhà.</p>
+            <ul>
+                <li>Sử dụng mật khẩu dài ít nhất 12 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.</li>
+                <li>Tuyệt đối không dùng chung một mật khẩu cho nhiều trang web quan trọng (Email, Ngân hàng, Mạng xã hội).</li>
+                <li>Bật tính năng <strong>Xác thực 2 yếu tố (2FA / MFA)</strong> cho mọi tài khoản có hỗ trợ.</li>
+            </ul>
+
+            <button class="btn btn-secondary" onclick="toggleSection('pass-faq')">Hỏi đáp nhanh về Mật khẩu</button>
+            <div id="pass-faq" class="toggle-content">
+                <h3>Q: Có quá nhiều mật khẩu, làm sao nhớ hết?</h3>
+                <p><strong>A:</strong> Hãy sử dụng các ứng dụng quản lý mật khẩu uy tín như <em>Bitwarden</em> hoặc <em>1Password</em>. Bạn chỉ cần nhớ một mật khẩu chính duy nhất!</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Nhận diện Chiêu trò Lừa đảo Trực tuyến (Phishing)</h2>
+            <p>Kẻ gian thường giả mạo cơ quan công an, ngân hàng, hoặc các nhãn hàng lớn để tung tin trúng thưởng hoặc đe dọa khóa tài khoản, nhằm đánh cắp thông tin đăng nhập.</p>
+            
+            <div class="meme-box">
+                <img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif" alt="Surprised panic meme">
+            </div>
+
+            <button class="btn" onclick="toggleSection('phishing-tips')">Mẹo phát hiện link lừa đảo</button>
+            <div id="phishing-tips" class="toggle-content">
+                <ul>
+                    <li>Kiểm tra kỹ tên miền (Domain): Ví dụ trang chính hãng là <code>vietcombank.com.vn</code> nhưng web giả mạo có thể là <code>vietcombank-security.com</code>.</li>
+                    <li>Không bao giờ cung cấp mã OTP hoặc mật khẩu cho bất kỳ ai, kể cả người tự xưng là công an hay nhân viên ngân hàng qua điện thoại.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. Tài nguyên & Đọc thêm</h2>
+            <p>Để nâng cao kiến thức chuyên sâu hơn về an toàn thông tin, bạn có thể tham khảo các cổng thông tin chính thống dưới đây:</p>
+            <ul>
+                <li><a class="external-link" href="https://ais.gov.vn" target="_blank">Cục An toàn thông tin (Bộ Thông tin và Truyền thông)</a></li>
+                <li><a class="external-link" href="https://khonggianmang.vn" target="_blank">Cổng không gian mạng quốc gia</a></li>
+                <li><a class="external-link" href="https://sade.vn" target="_blank">Cảnh báo mã độc và ứng cứu khẩn cấp (VNCERT)</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Góc Trắc nghiệm Nhanh</h2>
+            <p>Bấm vào câu hỏi bên dưới để xem đáp án chính xác và rút ra bài học cho mình nhé!</p>
+
+            <button class="btn btn-secondary" onclick="toggleSection('quiz-1')">Câu hỏi 1: Nhận được tin nhắn trúng thưởng từ người lạ gửi kèm link lạ, bạn nên làm gì?</button>
+            <div id="quiz-1" class="toggle-content">
+                <p><strong>Đáp án:</strong> Xóa ngay lập tức và tuyệt đối không bấm vào link. Trên đời không có bữa trưa nào miễn phí, đây là chiêu trò đánh cắp thông tin kinh điển!</p>
+            </div>
+
+            <button class="btn btn-secondary" onclick="toggleSection('quiz-2')">Câu hỏi 2: Có nên sử dụng wifi công cộng miễn phí tại quán cafe để chuyển khoản ngân hàng không?</button>
+            <div id="quiz-2" class="toggle-content">
+                <p><strong>Đáp án:</strong> Không nên. Wifi công cộng rất dễ bị kẻ xấu nghe lén dữ liệu (Man-in-the-middle attack). Hãy dùng 4G/5G khi thực hiện các giao dịch tài chính quan trọng.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Cẩm Nang An Toàn Không Gian Mạng. Hãy luôn cảnh giác!</p>
+    </footer>
+
+    <script>
+        // Hàm xử lý ẩn/hiện nội dung khi bấm nút
+        function toggleSection(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
