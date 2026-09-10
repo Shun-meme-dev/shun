@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cẩm Nang An Toàn Không Gian Mạng</title>
+    <title>Cẩm Nang An Toàn Không Gian Mạng </title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -11,6 +11,7 @@
             --accent-color: #17b978;
             --text-color: #333333;
             --card-bg: #ffffff;
+            --danger-color: #ff6b6b;
         }
 
         body {
@@ -19,37 +20,37 @@
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
         header {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 3rem 1rem;
         }
 
         header h1 {
             margin: 0 0 10px 0;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
         }
 
         header p {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.9;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 950px;
             margin: 30px auto;
             padding: 0 20px;
         }
 
         section {
             background: var(--card-bg);
-            margin-bottom: 25px;
-            padding: 25px;
+            margin-bottom: 30px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
@@ -63,6 +64,7 @@
 
         h3 {
             color: var(--primary-color);
+            margin-top: 20px;
         }
 
         /* Nút tương tác */
@@ -110,7 +112,53 @@
             max-width: 100%;
             height: auto;
             border-radius: 6px;
-            max-height: 300px;
+            max-height: 280px;
+        }
+
+        /* Phần Trắc nghiệm */
+        .quiz-container {
+            background-color: #f9fbfd;
+            border: 1px solid #e1e8ed;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .quiz-options button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: white;
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+            margin: 8px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .quiz-options button:hover {
+            background-color: #eef2f7;
+        }
+
+        .quiz-result {
+            margin-top: 12px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
         }
 
         ul {
@@ -128,10 +176,20 @@
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background-color: var(--primary-color);
             color: white;
             margin-top: 40px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .creator {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
         }
     </style>
 </head>
@@ -144,92 +202,157 @@
 
     <div class="container">
 
+        <!-- MỤC 1: TỔNG QUAN -->
         <section>
-            <h2>1. Tại sao An toàn Không gian Mạng lại quan trọng?</h2>
-            <p>Không gian mạng mang lại vô vàn tiện ích nhưng cũng tiềm ẩn nhiều rủi ro khôn lường từ hacker, lừa đảo trực tuyến và mã độc tống tiền (Ransomware). Chỉ một cú click sai chỗ có thể khiến bạn mất sạch dữ liệu hoặc tài khoản ngân hàng.</p>
+            <h2>1. Tổng Quan về An Toàn Không Gian Mạng</h2>
+            <p>Không gian mạng mang lại vô vàn tiện ích, nhưng cũng là mảnh đất màu mỡ cho tội phạm công nghệ cao. Chỉ một phút lơ đễnh, bạn có thể trở thành nạn nhân của việc mất tài khoản, tống tiền dữ liệu hoặc lộ thông tin cá nhân.</p>
             
             <div class="meme-box">
                 <img src="https://media.giphy.com/media/3o7TKSjRrfIPjeiOkM/giphy.gif" alt="Hacker typing meme">
             </div>
 
-            <button class="btn" onclick="toggleSection('overview-extra')">Xem thêm thực trạng hiện nay</button>
+            <button class="btn" onclick="toggleSection('overview-extra')">Xem thêm: Những dạng tấn công phổ biến</button>
             <div id="overview-extra" class="toggle-content">
-                <p><strong>Thực tế đáng báo động:</strong> Mỗi ngày có hàng triệu cuộc tấn công mạng diễn ra trên toàn cầu. Các hình thức lừa đảo qua mạng xã hội (Facebook, Telegram) và tin nhắn giả mạo ngân hàng (SMS Brandname giả) đang ngày càng tinh vi hơn bao giờ hết.</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>2. Nghệ thuật Quản lý Mật khẩu & Xác thực</h2>
-            <p>Mật khẩu yếu như <code>123456</code> hay <code>nguyenvanA1995</code> chính là "mở cửa đón trộm" vào nhà.</p>
-            <ul>
-                <li>Sử dụng mật khẩu dài ít nhất 12 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt.</li>
-                <li>Tuyệt đối không dùng chung một mật khẩu cho nhiều trang web quan trọng (Email, Ngân hàng, Mạng xã hội).</li>
-                <li>Bật tính năng <strong>Xác thực 2 yếu tố (2FA / MFA)</strong> cho mọi tài khoản có hỗ trợ.</li>
-            </ul>
-
-            <button class="btn btn-secondary" onclick="toggleSection('pass-faq')">Hỏi đáp nhanh về Mật khẩu</button>
-            <div id="pass-faq" class="toggle-content">
-                <h3>Q: Có quá nhiều mật khẩu, làm sao nhớ hết?</h3>
-                <p><strong>A:</strong> Hãy sử dụng các ứng dụng quản lý mật khẩu uy tín như <em>Bitwarden</em> hoặc <em>1Password</em>. Bạn chỉ cần nhớ một mật khẩu chính duy nhất!</p>
-            </div>
-        </section>
-
-        <section>
-            <h2>3. Nhận diện Chiêu trò Lừa đảo Trực tuyến (Phishing)</h2>
-            <p>Kẻ gian thường giả mạo cơ quan công an, ngân hàng, hoặc các nhãn hàng lớn để tung tin trúng thưởng hoặc đe dọa khóa tài khoản, nhằm đánh cắp thông tin đăng nhập.</p>
-            
-            <div class="meme-box">
-                <img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif" alt="Surprised panic meme">
-            </div>
-
-            <button class="btn" onclick="toggleSection('phishing-tips')">Mẹo phát hiện link lừa đảo</button>
-            <div id="phishing-tips" class="toggle-content">
                 <ul>
-                    <li>Kiểm tra kỹ tên miền (Domain): Ví dụ trang chính hãng là <code>vietcombank.com.vn</code> nhưng web giả mạo có thể là <code>vietcombank-security.com</code>.</li>
-                    <li>Không bao giờ cung cấp mã OTP hoặc mật khẩu cho bất kỳ ai, kể cả người tự xưng là công an hay nhân viên ngân hàng qua điện thoại.</li>
+                    <li><strong>Social Engineering (Kỹ nghệ xã hội):</strong> Lợi dụng lòng tin, sự sợ hãi hoặc lòng tham của con người để thao túng.</li>
+                    <li><strong>Malware / Ransomware:</strong> Phần mềm độc hại mã hóa dữ liệu máy tính và đòi tiền chuộc.</li>
+                    <li><strong>Credential Stuffing:</strong> Dùng danh sách mật khẩu bị lộ ở web này để thử đăng nhập sang các web khác của bạn.</li>
                 </ul>
             </div>
         </section>
 
+        <!-- MỤC 2: MẬT KHẨU & TÀI KHOẢN -->
         <section>
-            <h2>4. Tài nguyên & Đọc thêm</h2>
-            <p>Để nâng cao kiến thức chuyên sâu hơn về an toàn thông tin, bạn có thể tham khảo các cổng thông tin chính thống dưới đây:</p>
+            <h2>2. Quản Lý Mật Khẩu và Xác Thực Đa Lớp</h2>
+            <p>Mật khẩu yếu giống như việc bạn khóa cửa nhà bằng một cọng rơm. Việc bảo mật tài khoản cá nhân bắt đầu từ những thói quen nhỏ nhất.</p>
             <ul>
-                <li><a class="external-link" href="https://ais.gov.vn" target="_blank">Cục An toàn thông tin (Bộ Thông tin và Truyền thông)</a></li>
-                <li><a class="external-link" href="https://khonggianmang.vn" target="_blank">Cổng không gian mạng quốc gia</a></li>
-                <li><a class="external-link" href="https://sade.vn" target="_blank">Cảnh báo mã độc và ứng cứu khẩn cấp (VNCERT)</a></li>
+                <li><strong>Độ dài lý tưởng:</strong> Tối thiểu 12-16 ký tự bao gồm chữ hoa, thường, số và ký tự đặc biệt.</li>
+                <li><strong>Không tái sử dụng:</strong> Đừng bao giờ dùng chung một mật khẩu cho cả Facebook, Email và Tài khoản ngân hàng.</li>
+                <li><strong>Kích hoạt 2FA (2-Factor Authentication):</strong> Luôn bật mã xác thực qua SMS, Google Authenticator hoặc Passkey.</li>
             </ul>
+
+            <div class="meme-box">
+                <img src="https://media.giphy.com/media/3ohs7JG6nzYEPsFxao/giphy.gif" alt="Security meme">
+            </div>
+
+            <button class="btn btn-secondary" onclick="toggleSection('pass-faq')">Hỏi đáp nhanh: Quên mật khẩu làm sao?</button>
+            <div id="pass-faq" class="toggle-content">
+                <h3>Q: Làm thế nào để quản lý hàng chục mật khẩu khác nhau mà không sợ quên?</h3>
+                <p><strong>A:</strong> Bạn nên sử dụng các phần mềm Quản lý mật khẩu mã nguồn mở như <strong>Bitwarden</strong> hoặc tích hợp sẵn trên trình duyệt uy tín. Bạn chỉ cần ghi nhớ duy nhất một "mật khẩu chủ" (Master Password) cực mạnh là đủ.</p>
+            </div>
         </section>
 
+        <!-- MỤC 3: NHẬN DIỆN LỪA ĐẢO PHISHING -->
         <section>
-            <h2>5. Góc Trắc nghiệm Nhanh</h2>
-            <p>Bấm vào câu hỏi bên dưới để xem đáp án chính xác và rút ra bài học cho mình nhé!</p>
+            <h2>3. Nhận Diện Chiêu Trò Lừa Đảo (Phishing)</h2>
+            <p>Kẻ gian thường giả mạo ngân hàng, cơ quan thuế, công an hoặc các nhãn hàng lớn để gửi tin nhắn/email hăm dọa khóa tài khoản hoặc trúng thưởng lớn.</p>
+            <ul>
+                <li>Luôn kiểm tra kỹ địa chỉ tên miền (Domain) trước khi nhập thông tin đăng nhập.</li>
+                <li>Không bao giờ cung cấp mã OTP, mã PIN thẻ ngân hàng cho bất kỳ ai qua điện thoại hoặc mạng xã hội.</li>
+            </ul>
 
-            <button class="btn btn-secondary" onclick="toggleSection('quiz-1')">Câu hỏi 1: Nhận được tin nhắn trúng thưởng từ người lạ gửi kèm link lạ, bạn nên làm gì?</button>
-            <div id="quiz-1" class="toggle-content">
-                <p><strong>Đáp án:</strong> Xóa ngay lập tức và tuyệt đối không bấm vào link. Trên đời không có bữa trưa nào miễn phí, đây là chiêu trò đánh cắp thông tin kinh điển!</p>
+            <div class="meme-box">
+                <img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif" alt="Panic meme">
             </div>
 
-            <button class="btn btn-secondary" onclick="toggleSection('quiz-2')">Câu hỏi 2: Có nên sử dụng wifi công cộng miễn phí tại quán cafe để chuyển khoản ngân hàng không?</button>
-            <div id="quiz-2" class="toggle-content">
-                <p><strong>Đáp án:</strong> Không nên. Wifi công cộng rất dễ bị kẻ xấu nghe lén dữ liệu (Man-in-the-middle attack). Hãy dùng 4G/5G khi thực hiện các giao dịch tài chính quan trọng.</p>
+            <button class="btn" onclick="toggleSection('phishing-tips')">Mẹo kiểm tra link lạ siêu nhanh</button>
+            <div id="phishing-tips" class="toggle-content">
+                <p>Các trang web giả mạo thường có đuôi miền lạ đời (như <code>.cc</code>, <code>.tk</code>, <code>.xyz</code>) hoặc cố tình viết sai chính tả tên thương hiệu lớn (Ví dụ: <code>g00gle.com</code> thay vì <code>google.com</code>). Hãy cực kỳ cảnh giác!</p>
             </div>
+        </section>
+
+        <!-- MỤC 4: BẢO MẬT KHI DÙNG MẠNG XÃ HỘI & THIẾT BỊ -->
+        <section>
+            <h2>4. Thói quen An toàn trên Mạng Xã Hội và Thiết Bị</h2>
+            <p>Việc chia sẻ quá nhiều thông tin cá nhân (ngày sinh, địa chỉ, số điện thoại, check-in thời gian thực) trên Facebook, Instagram chính là "mồi ngon" cho kẻ gian lợi dụng định danh cá nhân (Identity Theft).</p>
+            <button class="btn btn-secondary" onclick="toggleSection('device-tips')">Xem checklist bảo vệ thiết bị cá nhân</button>
+            <div id="device-tips" class="toggle-content">
+                <ul>
+                    <li>Luôn cập nhật hệ điều hành và các phần mềm diệt virus mới nhất để vá lỗ hổng bảo mật.</li>
+                    <li>Không cắm USB lạ hoặc tải các phần mềm "bẻ khóa" (crack) trôi nổi trên mạng vì rất dễ dính mã độc đánh cắp cookie tài khoản.</li>
+                    <li>Hạn chế kết nối vào các mạng Wi-Fi công cộng không có mật khẩu khi thực hiện giao dịch tài chính.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MỤC 5: GÓC TRẮC NGHIỆM TƯƠNG TÁC (CÂU HỎI & ĐÁP ÁN) -->
+        <section>
+            <h2>5. Thử Thách Kiến Thức An Toàn Mạng</h2>
+            <p>Hãy chọn đáp án đúng cho các tình huống thực tế dưới đây để kiểm tra mức độ cảnh giác của bạn nhé!</p>
+
+            <!-- CÂU HỎI 1 -->
+            <div class="quiz-container">
+                <h3>Câu hỏi 1: Bạn nhận được tin nhắn từ "Ngân hàng" báo tài khoản bị khóa và yêu cầu bấm vào một đường link lạ để xác thực lại thông tin. Bạn sẽ làm gì?</h3>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer(1, false)">A. Bấm ngay vào link vì sợ bị khóa tài khoản thật.</button>
+                    <button onclick="checkAnswer(1, true)">B. Xóa tin nhắn, tuyệt đối không bấm link và gọi thẳng lên tổng đài chính thức của ngân hàng.</button>
+                    <button onclick="checkAnswer(1, false)">C. Chuyển tiếp tin nhắn đó cho bạn bè cùng xem và nhờ họ bấm thử hộ.</button>
+                </div>
+                <div id="quiz-result-1" class="quiz-result"></div>
+            </div>
+
+            <!-- CÂU HỎI 2 -->
+            <div class="quiz-container">
+                <h3>Câu hỏi 2: Khi tạo mật khẩu cho tài khoản quan trọng, cách nào dưới đây là an toàn nhất?</h3>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer(2, false)">A. Dùng ngày tháng năm sinh của bản thân kết hợp tên thú cưng cho dễ nhớ.</button>
+                    <button onclick="checkAnswer(2, false)">B. Dùng chuỗi số liên tiếp như "123456789".</button>
+                    <button onclick="checkAnswer(2, true)">C. Dùng chuỗi dài trên 12 ký tự gồm chữ hoa, chữ thường, số, ký tự đặc biệt hoặc dùng phần mềm quản lý mật khẩu.</button>
+                </div>
+                <div id="quiz-result-2" class="quiz-result"></div>
+            </div>
+
+            <!-- CÂU HỎI 3 -->
+            <div class="quiz-container">
+                <h3>Câu hỏi 3: Có nên sử dụng Wi-Fi miễn phí không mật khẩu tại quán cà phê để đăng nhập tài khoản ngân hàng không?</h3>
+                <div class="quiz-options">
+                    <button onclick="checkAnswer(3, true)">B. Không nên, vì Wi-Fi công cộng rất dễ bị kẻ xấu nghe lén gói dữ liệu (Man-in-the-middle).</button>
+                    <button onclick="checkAnswer(3, false)">A. Có, hoàn toàn an toàn vì quán đông khách.</button>
+                </div>
+                <div id="quiz-result-3" class="quiz-result"></div>
+            </div>
+        </section>
+
+        <!-- MỤC 6: TÀI LIỆU & ĐƯỜNG DẪN THAM KHẢO -->
+        <section>
+            <h2>6. Tài Nguyên & Đường Dẫn Hữu Ích</h2>
+            <p>Để tìm hiểu sâu hơn về luật an ninh mạng và các cảnh báo mới nhất, bạn có thể truy cập các cổng thông tin chính thống:</p>
+            <ul>
+                <li><a class="external-link" href="https://ais.gov.vn" target="_blank">Cục An toàn thông tin (Bộ Thông tin và Truyền thông)</a></li>
+                <li><a class="external-link" href="https://khonggianmang.vn" target="_blank">Cổng Không gian mạng Quốc gia</a></li>
+                <li><a class="external-link" href="https://vncert.cc" target="_blank">Trung tâm Ứng cứu khẩn cấp không gian mạng Việt Nam (VNCERT/CC)</a></li>
+            </ul>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 - Cẩm Nang An Toàn Không Gian Mạng. Hãy luôn cảnh giác!</p>
+        <p>&copy; 2026 - Cẩm Nang An Toàn Không Gian Mạng. Hãy luôn cảnh giác và giữ an toàn số!</p>
+        <p class="creator">Created by shun-meme-dev</p>
     </footer>
 
     <script>
-        // Hàm xử lý ẩn/hiện nội dung khi bấm nút
+        // Hàm ẩn/hiện mục thông tin
         function toggleSection(id) {
             var element = document.getElementById(id);
             if (element.style.display === "block") {
                 element.style.display = "none";
             } else {
                 element.style.display = "block";
+            }
+        }
+
+        // Hàm kiểm tra đáp án trắc nghiệm tương tác
+        function checkAnswer(questionNum, isCorrect) {
+            var resultDiv = document.getElementById("quiz-result-" + questionNum);
+            resultDiv.style.display = "block";
+            
+            if (isCorrect) {
+                resultDiv.className = "quiz-result correct";
+                resultDiv.innerHTML = "🎉 Chính xác! Bạn rất thông minh và có ý thức bảo mật tuyệt vời!";
+            } else {
+                resultDiv.className = "quiz-result incorrect";
+                resultDiv.innerHTML = "❌ Sai rồi! Hãy cẩn thận hơn nhé, đây là bẫy phổ biến của tin tặc!";
             }
         }
     </script>
