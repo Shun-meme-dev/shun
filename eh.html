@@ -67,7 +67,6 @@
             margin-top: 20px;
         }
 
-        /* Nút tương tác */
         .btn {
             background-color: var(--accent-color);
             color: white;
@@ -92,7 +91,6 @@
             background-color: var(--primary-color);
         }
 
-        /* Khung nội dung ẩn/hiện */
         .toggle-content {
             display: none;
             margin-top: 15px;
@@ -102,7 +100,6 @@
             border-radius: 4px;
         }
 
-        /* Meme container */
         .meme-box {
             text-align: center;
             margin: 20px 0;
@@ -115,7 +112,6 @@
             max-height: 280px;
         }
 
-        /* Phần Trắc nghiệm */
         .quiz-container {
             background-color: #f9fbfd;
             border: 1px solid #e1e8ed;
@@ -202,7 +198,6 @@
 
     <div class="container">
 
-        <!-- MỤC 1: TỔNG QUAN -->
         <section>
             <h2>1. Tổng Quan về An Toàn Không Gian Mạng</h2>
             <p>Không gian mạng mang lại vô vàn tiện ích, nhưng cũng là mảnh đất màu mỡ cho tội phạm công nghệ cao. Chỉ một phút lơ đễnh, bạn có thể trở thành nạn nhân của việc mất tài khoản, tống tiền dữ liệu hoặc lộ thông tin cá nhân.</p>
@@ -221,7 +216,6 @@
             </div>
         </section>
 
-        <!-- MỤC 2: MẬT KHẨU & TÀI KHOẢN -->
         <section>
             <h2>2. Quản Lý Mật Khẩu và Xác Thực Đa Lớp</h2>
             <p>Mật khẩu yếu giống như việc bạn khóa cửa nhà bằng một cọng rơm. Việc bảo mật tài khoản cá nhân bắt đầu từ những thói quen nhỏ nhất.</p>
@@ -242,7 +236,6 @@
             </div>
         </section>
 
-        <!-- MỤC 3: NHẬN DIỆN LỪA ĐẢO PHISHING -->
         <section>
             <h2>3. Nhận Diện Chiêu Trò Lừa Đảo (Phishing)</h2>
             <p>Kẻ gian thường giả mạo ngân hàng, cơ quan thuế, công an hoặc các nhãn hàng lớn để gửi tin nhắn/email hăm dọa khóa tài khoản hoặc trúng thưởng lớn.</p>
@@ -261,7 +254,6 @@
             </div>
         </section>
 
-        <!-- MỤC 4: BẢO MẬT KHI DÙNG MẠNG XÃ HỘI & THIẾT BỊ -->
         <section>
             <h2>4. Thói quen An toàn trên Mạng Xã Hội và Thiết Bị</h2>
             <p>Việc chia sẻ quá nhiều thông tin cá nhân (ngày sinh, địa chỉ, số điện thoại, check-in thời gian thực) trên Facebook, Instagram chính là "mồi ngon" cho kẻ gian lợi dụng định danh cá nhân (Identity Theft).</p>
@@ -275,12 +267,10 @@
             </div>
         </section>
 
-        <!-- MỤC 5: GÓC TRẮC NGHIỆM TƯƠNG TÁC (CÂU HỎI & ĐÁP ÁN) -->
         <section>
             <h2>5. Thử Thách Kiến Thức An Toàn Mạng</h2>
             <p>Hãy chọn đáp án đúng cho các tình huống thực tế dưới đây để kiểm tra mức độ cảnh giác của bạn nhé!</p>
 
-            <!-- CÂU HỎI 1 -->
             <div class="quiz-container">
                 <h3>Câu hỏi 1: Bạn nhận được tin nhắn từ "Ngân hàng" báo tài khoản bị khóa và yêu cầu bấm vào một đường link lạ để xác thực lại thông tin. Bạn sẽ làm gì?</h3>
                 <div class="quiz-options">
@@ -291,7 +281,6 @@
                 <div id="quiz-result-1" class="quiz-result"></div>
             </div>
 
-            <!-- CÂU HỎI 2 -->
             <div class="quiz-container">
                 <h3>Câu hỏi 2: Khi tạo mật khẩu cho tài khoản quan trọng, cách nào dưới đây là an toàn nhất?</h3>
                 <div class="quiz-options">
@@ -302,7 +291,6 @@
                 <div id="quiz-result-2" class="quiz-result"></div>
             </div>
 
-            <!-- CÂU HỎI 3 -->
             <div class="quiz-container">
                 <h3>Câu hỏi 3: Có nên sử dụng Wi-Fi miễn phí không mật khẩu tại quán cà phê để đăng nhập tài khoản ngân hàng không?</h3>
                 <div class="quiz-options">
@@ -313,7 +301,6 @@
             </div>
         </section>
 
-        <!-- MỤC 6: TÀI LIỆU & ĐƯỜNG DẪN THAM KHẢO -->
         <section>
             <h2>6. Tài Nguyên & Đường Dẫn Hữu Ích</h2>
             <p>Để tìm hiểu sâu hơn về luật an ninh mạng và các cảnh báo mới nhất, bạn có thể truy cập các cổng thông tin chính thống:</p>
@@ -332,7 +319,6 @@
     </footer>
 
     <script>
-        // Hàm ẩn/hiện mục thông tin
         function toggleSection(id) {
             var element = document.getElementById(id);
             if (element.style.display === "block") {
@@ -342,7 +328,6 @@
             }
         }
 
-        // Hàm kiểm tra đáp án trắc nghiệm tương tác
         function checkAnswer(questionNum, isCorrect) {
             var resultDiv = document.getElementById("quiz-result-" + questionNum);
             resultDiv.style.display = "block";
