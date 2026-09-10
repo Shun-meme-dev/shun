@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cẩm Nang An Toàn Không Gian Mạng</title>
+    <style>
+        :root {
+            --primary-color: #0284c7;
+            --secondary-color: #0f172a;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .tips-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tips-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .tips-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Nút tương tác */
+        .interactive-box {
+            background: #e0f2fe;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0369a1;
+        }
+
+        #secret-tip {
+            margin-top: 1rem;
+            font-weight: 500;
+            color: #0369a1;
+            display: none;
+        }
+
+        /* Danh sách liên kết video/ngoài */
+        .link-list {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .external-link {
+            display: inline-block;
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+            padding: 0.75rem 1.25rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid #cbd5e1;
+            transition: all 0.2s ease;
+        }
+
+        .external-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--secondary-color);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>An Toàn Không Gian Mạng</h1>
+        <p>Bảo vệ thông tin cá nhân và tài sản số của bạn trong kỷ nguyên số</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Mục con 1: Quy tắc mật khẩu -->
+        <div class="section">
+            <h2>1. Nguyên Tắc Đặt Mật Khẩu An Toàn</h2>
+            <p>Mật khẩu yếu là nguyên nhân hàng đầu dẫn đến việc tài khoản bị chiếm đoạt. Hãy ghi nhớ các quy tắc sau:</p>
+            <ul class="tips-list">
+                <li>Độ dài tối thiểu từ 12 ký tự trở lên.</li>
+                <li>Kết hợp giữa chữ hoa, chữ thường, số và ký tự đặc biệt (!@#$...).</li>
+                <li>Không sử dụng các thông tin dễ đoán như ngày sinh, số điện thoại hoặc tên riêng.</li>
+                <li>Sử dụng các công cụ quản lý mật khẩu đáng tin cậy.</li>
+            </ul>
+        </div>
+
+        <!-- Mục con 2: Nhận diện lừa đảo -->
+        <div class="section">
+            <h2>2. Nhận Diện Chiêu Trò Lừa Đảo Trực Tuyến (Phishing)</h2>
+            <p>Kẻ gian thường giả mạo ngân hàng, cơ quan nhà nước hoặc người quen để chiếm đoạt tài sản:</p>
+            <ul class="tips-list">
+                <li>Không nhấp vào các đường link lạ được gửi qua tin nhắn SMS, Zalo hoặc Email lạ.</li>
+                <li>Cảnh giác với các chiêu trò thông báo trúng thưởng hoặc đe dọa khóa tài khoản.</li>
+                <li>Luôn kiểm tra kỹ tên miền website trước khi đăng nhập thông tin cá nhân.</li>
+            </ul>
+
+            <!-- Nút tương tác -->
+            <div class="interactive-box">
+                <h3>Góc Tương Tác Nhanh</h3>
+                <p>Bạn có muốn nhận một mẹo bảo mật ngẫu nhiên ngay lúc này không?</p>
+                <button onclick="toggleSecretTip()">Nhận Mẹo Ngay</button>
+                <div id="secret-tip">💡 <strong>Mẹo hay:</strong> Hãy luôn kích hoạt tính năng Xác thực 2 bước (2FA) cho tất cả các tài khoản quan trọng của bạn!</div>
+            </div>
+        </div>
+
+        <!-- Mục con 3: Liên kết video và nội dung mở rộng -->
+        <div class="section">
+            <h2>3. Tài Nguyên & Video Hướng Dẫn</h2>
+            <p>Để hiểu rõ hơn về cách phòng chống tội phạm mạng, bạn có thể tham khảo các nguồn video và tài liệu hữu ích dưới đây:</p>
+            <div class="link-list">
+                <a href="https://www.youtube.com" target="_blank" class="external-link">📺 Xem Video: Nhận diện lừa đảo mạng</a>
+                <a href="https://ais.gov.vn" target="_blank" class="extetnal-link external-link">🌐 Cục An toàn thông tin (Bộ TT&TT)</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Trang Web An Toàn Không Gian Mạng. Bảo vệ bạn trên môi trường số.</p>
+    </footer>
+
+    <script>
+        // Hàm JavaScript xử lý nút tương tác
+        function toggleSecretTip() {
+            const tipBox = document.getElementById('secret-tip');
+            if (tipBox.style.display === 'none' || tipBox.style.display === '') {
+                tipBox.style.display = 'block';
+            } else {
+                tipBox.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
