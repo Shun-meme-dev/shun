@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Rubik</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #111;
+            font-family: sans-serif;
+        }
+        #instructions {
+            position: absolute;
+            top: 15px;
+            width: 100%;
+            text-align: center;
+            color: #fff;
+            pointer-events: none;
+            font-size: 14px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div id="instructions">Meow</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+    class Cube {
+        constructor(game) {
+            this.game = game;
+            
+            this.holder = new THREE.Object3D();
+            this.object = new THREE.Object3D();
+            this.animator = new THREE.Object3D();
+
+            this.holder.add(this.animator);
+            this.animator.add(this.object);
+            
+            this.game.scene.add(this.holder);
+        }
+    }
+
+    class Game {
+        constructor() {
+            this.scene = new THREE.Scene();
+            
+            this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+            this.camera.position.set(6, 6, 8);
+
+            this.renderer = new THREE.WebGLRenderer({ antialias: true });
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+            document.body.appendChild(this.renderer.domElement);
+
+            this.controls = new THREE.OrbitControls(this.camera, this.renderer.domElement);
+            this.controls.enableDamping = true;
+
+            this.scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+            const light = new THREE.DirectionalLight(0xffffff, 0.8);
+            light.position.set(10, 20, 15);
+            this.scene.add(light);
+
+            this.createRubik();
+
+            window.addEventListener('resize', () => this.onWindowResize());
+            this.animate();
+        }
+
+        createRubik() {
+            this.rubikCube = new Cube(this);
+            
+            const cubeSize = 0.92;
+            const spacing = 1.0;
+            const colors = [
+                0xff3b30,
+                0xff9500,
+                0xffcc00,
+                0xffffff,
+                0x34c759,
+                0x007aff
+            ];
+
+            for (let x = -1; x <= 1; x++) {
+                for (let y = -1; y <= 1; y++) {
+                    for (let z = -1; z <= 1; z++) {
+                        const materials = colors.map(color => new THREE.MeshStandardMaterial({ 
+                            color: color, 
+                            roughness: 0.2, 
+                            metalness: 0.1 
+                        }));
+                        const geometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+                        const smallCube = new THREE.Mesh(geometry, materials);
+                        smallCube.position.set(x * spacing, y * spacing, z * spacing);
+                        
+                        this.rubikCube.object.add(smallCube);
+                    }
+                }
+            }
+        }
+
+        onWindowResize() {
+            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.updateProjectionMatrix();
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        animate() {
+            requestAnimationFrame(() => this.animate());
+            
+            if (this.rubikCube) {
+                this.rubikCube.holder.rotation.y += 0.003;
+                this.rubikCube.holder.rotation.x += 0.001;
+            }
+
+            this.controls.update();
+            this.renderer.render(this.scene, this.camera);
+        }
+    }
+
+    const game = new Game();
+</script>
+
+</body>
+</html>
