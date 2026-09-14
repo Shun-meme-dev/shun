@@ -1,0 +1,13 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    text-decoration: underline;
+}
+.chu-nghieng-dep {
+    font-style: italic;
+    letter-spacing: 1.5px;
+}
